@@ -1,4 +1,11 @@
 terraform {
+  backend "azurerm" {
+    resource_group_name  = "jonnychipz-infra"
+    storage_account_name = "jonnychipztstatead"
+    container_name       = "tstate"
+    key                  = "5JCHXk/h7K8lygEJT4ROljnILvXTTYBOQvOQfowcX5reAuQaf2Xxuqd1xxDb7++KSYXfQ21SzqlV+AStpViDQg=="
+  }
+
   required_providers {
     azurerm = {
       # Specify what version of the provider we are going to utilise
