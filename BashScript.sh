@@ -2,7 +2,7 @@
 #!/bin/bash
 #Connect and Set Subscription Context in Azure
 az login
-az account set --Subscription "Terraform-Deployment"
+az account set --subscription "Terraform-Deployment"
 
 #Set Variables for Storage account and Key Vault that Support the Terraform Implementation
 RESOURCE_GROUP_NAME=aws-pre-infra
