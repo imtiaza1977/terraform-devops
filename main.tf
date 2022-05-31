@@ -49,7 +49,7 @@ resource "azurerm_storage_account" "awspresa" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
   tags = {
-    environment = "aws-prerox"
+    environment = "aws-prerox1"
   }
 }
 # Create our vNIC for our VM and assign it to our Virtual Machines Subnet
