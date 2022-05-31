@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "jonnychipz-infra"
     storage_account_name = "jonnychipztstatead"
     container_name       = "tstate"
-    key                  = "5JCHXk/h7K8lygEJT4ROljnILvXTTYBOQvOQfowcX5reAuQaf2Xxuqd1xxDb7++KSYXfQ21SzqlV+AStpViDQg=="
+    key                  = "R0VhwSw01njKZBVVGzL3lMl85GSt/DlfEyYjoB9St6YMRjc6CDhuyDsK/t6L2efPjKycO80zyGZL+ASt3axscw=="
   }
 
   required_providers {

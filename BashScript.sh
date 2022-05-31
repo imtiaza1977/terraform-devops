@@ -29,6 +29,6 @@ echo "access_key: $ACCOUNT_KEY"
 echo "state_file: $STATE_FILE"
 
 # Create keyvault and example of Storing a Key
-az keyvault create --name "adeelkv" --resource-group "jonnychipz-infra" --location koreacentral
-az keyvault secret set --vault-name "adeelkv" --name "tstateaccess" --value {$ACCOUNT_KEY}
-az keyvault secret show --vault-name "adeelkv" --name "tstateaccess"
+az keyvault create --name "adeelkv1" --resource-group "jonnychipz-infra" --location koreacentral
+az keyvault secret set --vault-name "adeelkv1" --name "tstateaccess" --value {$ACCOUNT_KEY}
+az keyvault secret show --vault-name "adeelkv1" --name "tstateaccess"
