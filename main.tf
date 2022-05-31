@@ -1,9 +1,9 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "jonnychipz-infra"
-    storage_account_name = "jonnychipztstatead"
-    container_name       = "tstate"
-    key                  = "R0VhwSw01njKZBVVGzL3lMl85GSt/DlfEyYjoB9St6YMRjc6CDhuyDsK/t6L2efPjKycO80zyGZL+ASt3axscw=="
+    RESOURCE_GROUP_NAME  = awspre-infra
+    STORAGE_ACCOUNT_NAME = awsprestorage
+    CONTAINER_NAME       = awsprestate
+    key                  = "rjoHGQX8FJEGfDuIfj8iWteLfMxGbLNpSHI7l0HZUDdZv9UoSEnyytI08XrF8Bj5+qqjuT01ArCb+AStXU7Rvw=="
   }
 
   required_providers {
@@ -25,37 +25,37 @@ data "azurerm_client_config" "current" {}
 
 # Create our Resource Group - aws-pre-RG
 resource "azurerm_resource_group" "rg" {
-  name     = "aws-pre-app02"
+  name     = "aws-pre-app001"
   location = "Korea Central"
 }
 # Create our Virtual Network - aws-pre-VNET
 resource "azurerm_virtual_network" "vnet" {
-  name                = "aws-prevnet1"
+  name                = "aws-prevnet001"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 # Create our Subnet to hold our VM - Virtual Machines
 resource "azurerm_subnet" "sn" {
-  name                 = "VM1"
+  name                 = "VM001"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 }
 # Create our Azure Storage Account - awspresa
 resource "azurerm_storage_account" "awspresa" {
-  name                     = "awspresa1"
+  name                     = "awspresa001"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   tags = {
-    environment = "aws-prerox1"
+    environment = "aws-pre"
   }
 }
 # Create our vNIC for our VM and assign it to our Virtual Machines Subnet
 resource "azurerm_network_interface" "vmnic" {
-  name                = "aws-prevm02nic"
+  name                = "aws-prevm001nic"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -67,7 +67,7 @@ resource "azurerm_network_interface" "vmnic" {
 }
 # Create our Virtual Machine - aws-pre-VM01
 resource "azurerm_virtual_machine" "aws-prevm01" {
-  name                  = "aws-prevm02"
+  name                  = "aws-prevm001"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.vmnic.id]
@@ -79,13 +79,13 @@ resource "azurerm_virtual_machine" "aws-prevm01" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "aws-prevm02os"
+    name              = "aws-prevm001os"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "aws-prevm02"
+    computer_name  = "aws-prevm001"
     admin_username = "imtiaza"
     admin_password = "$$Lahore!@#$$"
   }
