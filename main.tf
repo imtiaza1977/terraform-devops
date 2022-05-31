@@ -41,9 +41,9 @@ resource "azurerm_subnet" "sn" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 }
-# Create our Azure Storage Account - aws-presa
-resource "azurerm_storage_account" "aws-presa" {
-  name                     = "aws-presa"
+# Create our Azure Storage Account - awspresa
+resource "azurerm_storage_account" "awspresa" {
+  name                     = "awspresa"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
