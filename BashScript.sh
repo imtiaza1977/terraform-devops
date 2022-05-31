@@ -2,9 +2,9 @@
 az login
 az account set --subscription "Terraform-Deployment" 
 
-RESOURCE_GROUP_NAME=jonnychipz-infra
-STORAGE_ACCOUNT_NAME=jonnychipztstatead
-CONTAINER_NAME=tstate
+RESOURCE_GROUP_NAME=awspre-infra
+STORAGE_ACCOUNT_NAME=awsprestorage
+CONTAINER_NAME=awsprestate
 STATE_FILE="terraform.state"
 
 # Create resource group
@@ -29,6 +29,6 @@ echo "access_key: $ACCOUNT_KEY"
 echo "state_file: $STATE_FILE"
 
 # Create keyvault and example of Storing a Key
-az keyvault create --name "adeelkv1" --resource-group "jonnychipz-infra" --location koreacentral
-az keyvault secret set --vault-name "adeelkv1" --name "tstateaccess" --value {$ACCOUNT_KEY}
-az keyvault secret show --vault-name "adeelkv1" --name "tstateaccess"
+az keyvault create --name "awspre" --resource-group "awspre-infra" --location koreacentral
+az keyvault secret set --vault-name "awspre" --name "awsprestate" --value {$ACCOUNT_KEY}
+az keyvault secret show --vault-name "awspre" --name "awsprestateaccess"
