@@ -3,7 +3,7 @@ terraform {
     RESOURCE_GROUP_NAME  = awspre-infra
     STORAGE_ACCOUNT_NAME = awsprestorage
     CONTAINER_NAME       = awsprestate
-    key                  = "rjoHGQX8FJEGfDuIfj8iWteLfMxGbLNpSHI7l0HZUDdZv9UoSEnyytI08XrF8Bj5+qqjuT01ArCb+AStXU7Rvw=="
+    key                  = "glhPjhrD1vxHGxTV5+4WZtDz3EPNm6/y720eQkIws15bWhNgQNwGSvNAyhGB7n3P3BlSF7CIuBI0+AStxEuEIQ=="
   }
 
   required_providers {
