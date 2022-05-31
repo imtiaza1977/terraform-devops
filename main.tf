@@ -85,7 +85,7 @@ resource "azurerm_virtual_machine" "aws-prevm01" {
   }
   os_profile {
     computer_name  = "aws-prevm01"
-    admin_username = "imtiaza!@#123"
+    admin_username = "imtiaza"
     admin_password = "$$Lahore!@#$$"
   }
   os_profile_windows_config {
